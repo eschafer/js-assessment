@@ -18,13 +18,20 @@ define(function() {
       for (var i = 0; i < arr.length; i++) {
         if (arr[i] === item) {
           arr.splice(i, 1);
+          i--;
         }
       }
       return arr;
     },
     
     removeWithoutCopy : function(arr, item) {
-
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === item) {
+          arr.splice(i, 1);
+          i--;
+        }
+      }
+      return arr;
     },
 
     append : function(arr, item) {
@@ -58,7 +65,13 @@ define(function() {
     },
 
     duplicates : function(arr) {
-
+      var answers = [];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr.lastIndexOf(arr[i]) !== i) {
+          answers.push(arr[i]);
+        }
+      }
+      return answers;
     },
 
     square : function(arr) {
