@@ -15,7 +15,7 @@ define(function() {
     },
 
     multiply: function(a, b) {
-
+        return parseFloat((a * b).toPrecision(10));
     }
   };
 });
